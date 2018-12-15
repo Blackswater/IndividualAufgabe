@@ -26,9 +26,17 @@ public class Terminal implements ITerminal {
         informationdesk.add(new InformationDesk(InformationDeskNames.T32, "a", "8", Terminal.this));
         informationdesk.add(new InformationDesk(InformationDeskNames.T33, "a", "9", Terminal.this));
 
+    }/*
+        build();
+        for (InformationDesk desk: informationdesk) {
+            System.out.println(desk.getName());
+
+        }
 
     }
-
+    public void build() {
+    }
+*/
     public TerminalNames getName() {
         return name;
     }
@@ -66,6 +74,6 @@ public class Terminal implements ITerminal {
 */
     @Override
     public String version() {
-        return "<"+id+"> "+"<"+type+">";
+        return "id: <"+id+"> "+"type: <"+type+">";
     }
 }

@@ -11,24 +11,30 @@ public class InformationDesk implements IInformationDesk {
         this.terminal= terminal;
     }
 
-/*
-    @Override
-    public Passenger searchPassengerByID(Boardingpas boardingpass) {
-        return null;
+    public InformationDeskNames getName() {
+        return name;
     }
 
-    @Override
-    public GateID searchGateByFlight(BoardingPass boardingPass) {
-        return null;
-    }
+    /*
+        @Override
+        public Passenger searchPassengerByID(Boardingpas boardingpass) {
+            return null;
+        }
 
-    @Override
-    public void informFederalPolice() {
-        callFederalPolice(name);
-    }
+        @Override
+        public GateID searchGateByFlight(BoardingPass boardingPass) {
+            return null;
+        }
 */
+        @Override
+        public boolean informFederalPolice() {
+            //callFederalPolice(name);
+            System.out.println("DIe Bundespolizei wurde Informiert und zu ihrem InformationDesk geschickt! " + getName());
+            return true;
+        }
+
     @Override
     public String version() {
-        return "<"+id+"> " + "<" + type +">";
+        return "id: <"+id+"> " + "type: <" + type +">";
     }
 }

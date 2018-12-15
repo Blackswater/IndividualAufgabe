@@ -6,14 +6,20 @@ public class Airport implements IAirport {
 //    private AirportReourcePool resourcePool;
  //private ArrayList<Gate> gateList;
  //private Apron apron;
- //private ArrayList<CheckInDesk> checkInDeskList;
+//private ArrayList<CheckInDesk> checkInDeskList;
  //private IBulkyBaggageDesk bulykBaggageDesk;
  //private ArrayList<ISecurityCheckList> securityCheckList;
  //private ApronControl apronControl;
  //private Tower tower;
+    private String name;
     private String type;
     private String id;
     private ArrayList<Terminal> terminal = new ArrayList<Terminal>();
+
+
+    public String getName() {
+        return name;
+    }
 
     public ArrayList<Terminal> getTerminal() {
         return terminal;
@@ -34,7 +40,8 @@ public class Airport implements IAirport {
             this.id = id;
         }
      */
-    public Airport(String id, String type) {
+    public Airport(String name, String id, String type) {
+        this.name = name;
         this.id = id;
         this.type = type;
         build();
@@ -86,6 +93,9 @@ public class Airport implements IAirport {
         terminal.add(new Terminal(TerminalNames.T1, "a", "1", Airport.this));
         terminal.add(new Terminal(TerminalNames.T2, "a", "2", Airport.this));
         terminal.add(new Terminal(TerminalNames.T3, "a", "3", Airport.this));
+    //    for(Terminal t: terminal) {
+      //     System.out.println(t);
+        //}
     }
 /*
     }
@@ -183,6 +193,6 @@ public class Airport implements IAirport {
     @Override
     public String version() {
 
-        return "<" + id +"> " + "<"+type+">";
+        return "id: <" + id +"> " + "type: <"+type+">";
     }
 }
